@@ -51,3 +51,12 @@ var getConcatenation = function (nums) {
 //   return pairs;
 // };
 //  numIdenticalPairs([1, 2, 3, 1, 1, 3]);
+
+async function sleep(millis) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(millis)
+    }, [millis]);
+  })
+}
+console.log(sleep(100));
