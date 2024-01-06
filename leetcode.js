@@ -52,11 +52,32 @@ var getConcatenation = function (nums) {
 // };
 //  numIdenticalPairs([1, 2, 3, 1, 1, 3]);
 
-async function sleep(millis) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(millis)
-    }, [millis]);
-  })
-}
-console.log(sleep(100));
+// async function sleep(millis) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(millis)
+//     }, [millis]);
+//   })
+// }
+
+var isEmpty = function (obj) {
+  return Object.keys(obj).length === 0;
+};
+
+var chunk = function (arr, size) {
+  let start = 0;
+  let end = size;
+  let chunk = [];
+  for (let i = 0; i < arr.length / size; i++) {
+    chunk.push(arr.slice(start, end));
+    start = start + size;
+    end = end + size;
+  }
+  return chunk;
+};
+// const parser = (str) => {
+//   for (let i = 0; i < str.length; i++) {
+//     console.log(str[i]);
+//   }
+// };
+// console.log(parser("G()(al)"));
