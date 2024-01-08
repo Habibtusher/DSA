@@ -75,9 +75,28 @@ var chunk = function (arr, size) {
   }
   return chunk;
 };
-// const parser = (str) => {
-//   for (let i = 0; i < str.length; i++) {
-//     console.log(str[i]);
-//   }
+// var interpret = function (command) {
+//   return command.replace(/\(\)|\(al\)/g, (str) => {
+//    return str === '()' ? 'o' : 'al';
+//  });
 // };
-// console.log(parser("G()(al)"));
+
+var defangIPaddr = function (address) {
+  return address.replace(/(\.)/g, "[.]");
+};
+var findWordsContaining = function (words, x) {
+  let result = [];
+  for (let i = 0; i < words.length; i++) {
+    for (let j = 0; j < words[i].length; j++) {
+      if(words[i][j] === x) {
+        result.push(i)
+        break
+      }
+    }
+    // if (words[i].includes(x)) {
+    //   result.push(i);
+    // }
+  }
+  return result;
+};
+console.log(findWordsContaining(["leet", "code"], "e"));
