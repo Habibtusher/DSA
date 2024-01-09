@@ -99,10 +99,8 @@ var chunk = function (arr, size) {
 
 // 1431
 const ckeckGreterthan = (arr, nums) => {
-  
   let result = true;
   for (let i = 0; i < arr.length; i++) {
-   
     if (nums >= arr[i]) {
       result = true;
     } else {
@@ -127,3 +125,54 @@ var kidsWithCandies = function (candies, extraCandies) {
   return result;
 };
 // console.log(kidsWithCandies([2, 3, 5, 1, 3], 3));
+var differenceOfSums = function (n, m) {
+  let num1 = 0;
+  let num2 = 0;
+  for (let i = 1; i <= n; i++) {
+    if (i % m !== 0) {
+      num1 += i;
+    } else {
+      num2 += i;
+    }
+  }
+  return num1 - num2;
+};
+var createCounter = function (n) {
+  console.log(n);
+  return function () {
+    return n++;
+  };
+};
+var map = function (arr, fn) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(fn(arr[i]));
+  }
+  return result;
+};
+function plusone(n) {
+  return n + 1;
+}
+
+// console.log(map([1,2,3],plusone));
+var reduce = function (nums, fn, init) {
+  let val = init;
+  if (nums.length > 0) {
+    for (let i = 0; i < nums.length; i++) {
+      val = fn(val, nums[i]);
+    }
+  } else {
+    return val;
+  }
+
+  return val;
+};
+console.log(
+  reduce(
+    [1, 2, 3, 4],
+    function sum(accum, curr) {
+      return accum + curr;
+    },
+    0
+  )
+);
