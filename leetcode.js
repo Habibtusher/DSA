@@ -81,22 +81,49 @@ var chunk = function (arr, size) {
 //  });
 // };
 
-var defangIPaddr = function (address) {
-  return address.replace(/(\.)/g, "[.]");
-};
-var findWordsContaining = function (words, x) {
-  let result = [];
-  for (let i = 0; i < words.length; i++) {
-    for (let j = 0; j < words[i].length; j++) {
-      if(words[i][j] === x) {
-        result.push(i)
-        break
-      }
+// var defangIPaddr = function (address) {
+//   return address.replace(/(\.)/g, "[.]");
+// };
+// var findWordsContaining = function (words, x) {
+//   let result = [];
+//   for (let i = 0; i < words.length; i++) {
+//     for (let j = 0; j < words[i].length; j++) {
+//       if(words[i][j] === x) {
+//         result.push(i)
+//         break
+//       }
+//     }
+//   }
+//   return result;
+// };
+
+// 1431
+const ckeckGreterthan = (arr, nums) => {
+  
+  let result = true;
+  for (let i = 0; i < arr.length; i++) {
+   
+    if (nums >= arr[i]) {
+      result = true;
+    } else {
+      result = false;
+      return result;
     }
-    // if (words[i].includes(x)) {
-    //   result.push(i);
-    // }
   }
   return result;
 };
-console.log(findWordsContaining(["leet", "code"], "e"));
+var kidsWithCandies = function (candies, extraCandies) {
+  let result = [];
+
+  for (let i = 0; i < candies.length; i++) {
+    const element = candies[i] + extraCandies;
+
+    if (ckeckGreterthan(candies, element)) {
+      result.push(true);
+    } else {
+      result.push(false);
+    }
+  }
+  return result;
+};
+// console.log(kidsWithCandies([2, 3, 5, 1, 3], 3));
