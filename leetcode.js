@@ -167,12 +167,26 @@ var reduce = function (nums, fn, init) {
 
   return val;
 };
-console.log(
-  reduce(
-    [1, 2, 3, 4],
-    function sum(accum, curr) {
-      return accum + curr;
-    },
-    0
-  )
-);
+// console.log(
+//   reduce(
+//     [1, 2, 3, 4],
+//     function sum(accum, curr) {
+//       return accum + curr;
+//     },
+//     0
+//   )
+// );
+var compose = function (functions) {
+  return function (x) {
+    if (functions.length) {
+      for (let i = functions.length - 1; i >= 0; i--) {
+        x = functions[i](x);
+      }
+      return x;
+    } else {
+      return x;
+    }
+  };
+};
+const fn = compose([(x) => x + 1, (x) => x * x, (x) => 2 * x]);
+console.log(fn(4));
