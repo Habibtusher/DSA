@@ -189,4 +189,14 @@ var compose = function (functions) {
   };
 };
 const fn = compose([(x) => x + 1, (x) => x * x, (x) => 2 * x]);
-console.log(fn(4));
+// console.log(fn(4));
+
+Array.prototype.last = function () {
+  if (this.length > 0) {
+    return this[this.length - 1];
+  } else {
+    return -1;
+  }
+};
+const arr = [1, 2, 3];
+arr.last();
