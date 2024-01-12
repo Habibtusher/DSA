@@ -199,4 +199,25 @@ Array.prototype.last = function () {
   }
 };
 const arr = [1, 2, 3];
-console.log(arr.last());
+// console.log(arr.last());
+
+var leftRightDifference = function (nums) {
+  const leftSum = [0];
+  const rightSum = [0];
+  const result = [];
+  for (let i = 0; i < nums.length - 1; i++) {
+    leftSum.push(nums[i] + leftSum[i]);
+  }
+  const newArr = nums.reverse();
+  for (let j = 0; j < newArr.length - 1; j++) {
+    rightSum.push(newArr[j] + rightSum[j]);
+  }
+  let reverRight = rightSum.reverse()
+  console.log(leftSum , reverRight);
+
+  for (let i = 0; i < nums.length; i++) {
+    result.push(Math.abs(leftSum[i] - reverRight[i]));
+  }
+  return result;
+};
+console.log(leftRightDifference([10,4,8,3]));
