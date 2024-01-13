@@ -212,12 +212,24 @@ var leftRightDifference = function (nums) {
   for (let j = 0; j < newArr.length - 1; j++) {
     rightSum.push(newArr[j] + rightSum[j]);
   }
-  let reverRight = rightSum.reverse()
-  console.log(leftSum , reverRight);
+  let reverRight = rightSum.reverse();
+  console.log(leftSum, reverRight);
 
   for (let i = 0; i < nums.length; i++) {
     result.push(Math.abs(leftSum[i] - reverRight[i]));
   }
   return result;
 };
-console.log(leftRightDifference([10,4,8,3]));
+// console.log(leftRightDifference([10,4,8,3]));
+var finalValueAfterOperations = function (operations) {
+  let X = 0;
+  for (let i = 0; i < operations.length; i++) {
+      if (operations[i] === "++X" || operations[i] === "X++") {
+          X++;
+      } else if (operations[i] === "--X" || operations[i] === "X--") {
+          X--;
+      }
+  }
+  return X
+};
+console.log(finalValueAfterOperations(["--X", "X++", "X++"]));
