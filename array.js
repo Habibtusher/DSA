@@ -8,12 +8,12 @@ const join = function (arr1, arr2) {
   }
   return Object.values(ob);
 };
-console.log(
-  join(
-    [{ id: 1, b: { b: 94 }, v: [4, 3], y: 48 }],
-    [{ id: 1, b: { c: 84 }, v: [1, 3] }]
-  )
-);
+// console.log(
+//   join(
+//     [{ id: 1, b: { b: 94 }, v: [4, 3], y: 48 }],
+//     [{ id: 1, b: { c: 84 }, v: [1, 3] }]
+//   )
+// );
 var runningSum = function (nums) {
   let result = [];
   for (let i = 0; i < nums.length; i++) {
@@ -45,4 +45,11 @@ var smallerNumbersThanCurrent = function (nums) {
   }
   return result;
 };
-console.log(smallerNumbersThanCurrent([8, 1, 2, 2, 3]));
+
+var lengthOfLastWord = function (s) {
+  var sArr=s.trim().split(' ');
+  return sArr.pop().length;
+
+
+};
+console.log(lengthOfLastWord("   day  kk"));
