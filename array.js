@@ -47,9 +47,22 @@ var smallerNumbersThanCurrent = function (nums) {
 };
 
 var lengthOfLastWord = function (s) {
-  var sArr=s.trim().split(' ');
+  var sArr = s.trim().split(" ");
   return sArr.pop().length;
-
-
 };
-console.log(lengthOfLastWord("   day  kk"));
+var plusOne = function (digits) {
+  let newStr = "";
+  const result = [];
+  for (let i = 0; i < digits.length; i++) {
+    newStr += digits[i];
+  }
+
+  const newInt = BigInt(newStr) + BigInt(1);
+  const toString = newInt.toString();
+ 
+  for (let i = 0; i < toString.length; i++) {
+    result.push(toString[i]);
+  }
+  return result;
+};
+console.log(plusOne([6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3]));
