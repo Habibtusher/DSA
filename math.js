@@ -20,4 +20,16 @@ var removeDuplicates = function (nums) {
   }
   return i + 1;
 };
-console.log(removeDuplicates([1, 1, 2]));
+
+var subtractProductAndSum = function (n) {
+  let product = 1,
+    sum = 0;
+  const array = n.toString();
+  for (let i = 0; i < array.length; i++) {
+    product = product *  parseInt(array[i]);
+    sum += parseInt(array[i]);
+  }
+  console.log(product, sum);
+  return product - sum;
+};
+console.log(subtractProductAndSum(234));
