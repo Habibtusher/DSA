@@ -26,10 +26,17 @@ var subtractProductAndSum = function (n) {
     sum = 0;
   const array = n.toString();
   for (let i = 0; i < array.length; i++) {
-    product = product *  parseInt(array[i]);
+    product = product * parseInt(array[i]);
     sum += parseInt(array[i]);
   }
   console.log(product, sum);
   return product - sum;
 };
 console.log(subtractProductAndSum(234));
+
+
+const sortArray = (arr) => {
+  // return arr.sort()
+  return arr.toSorted()
+}
+console.log(sortArray(["Jan", "Feb", "Mar", "Apr"]));
