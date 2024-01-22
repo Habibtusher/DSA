@@ -31,5 +31,16 @@ var maximumWealth = function (accounts) {
     // return result
     return Math.max(...accounts.map((e,) => e.reduce((sum, balance) => sum + balance, 0)))
 };
-console.log(maximumWealth([[1, 5], [7, 3], [3, 5]]));
+// console.log(maximumWealth([[1, 5], [7, 3], [3, 5]]));
 // console.log(mostWordsFound(["alice and bob love leetcode", "i think so too", "this is great thanks very much"]));
+var countMatches = function (items, ruleKey, ruleValue) {
+    let matches = 0;
+    for (let j = 0; j < items.length; j++) {
+        if (ruleKey === 'type' && items[j][0] === ruleValue || ruleKey === 'color' && items[j][1] === ruleValue || ruleKey === 'name' && items[j][2] === ruleValue) {
+            matches++;
+        }
+    }
+    return matches
+};
+console.log(countMatches([["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"],
+["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"]], ruleKey = "name", ruleValue = "qqqq"));
