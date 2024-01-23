@@ -42,5 +42,13 @@ var countMatches = function (items, ruleKey, ruleValue) {
     }
     return matches
 };
-console.log(countMatches([["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"],
-["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"]], ruleKey = "name", ruleValue = "qqqq"));
+
+
+// console.log(countMatches([["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"],
+// ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"]], ruleKey = "name", ruleValue = "qqqq"));
+var truncateSentence = function(s, k) {
+
+    return s.split(' ').splice(0, k).join(" ")
+    // return s.split(' ').slice(0, k).join(" ")
+ };
+ console.log( truncateSentence("Hello how are you Contestant",4));

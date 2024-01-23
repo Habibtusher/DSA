@@ -32,11 +32,14 @@ var subtractProductAndSum = function (n) {
   console.log(product, sum);
   return product - sum;
 };
-console.log(subtractProductAndSum(234));
+// console.log(subtractProductAndSum(234));
 
 
 const sortArray = (arr) => {
   // return arr.sort()
   return arr.toSorted()
 }
-console.log(sortArray(["Jan", "Feb", "Mar", "Apr"]));
+// console.log(sortArray(["Jan", "Feb", "Mar", "Apr"]));
+
+const number = [1,2,3,4,5]
+console.log(number.slice(-1,2));
