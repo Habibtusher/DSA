@@ -46,9 +46,22 @@ var countMatches = function (items, ruleKey, ruleValue) {
 
 // console.log(countMatches([["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"],
 // ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"], ["qqqq", "qqqq", "qqqq"]], ruleKey = "name", ruleValue = "qqqq"));
-var truncateSentence = function(s, k) {
+var truncateSentence = function (s, k) {
 
     return s.split(' ').splice(0, k).join(" ")
     // return s.split(' ').slice(0, k).join(" ")
- };
- console.log( truncateSentence("Hello how are you Contestant",4));
+};
+// console.log(truncateSentence("Hello how are you Contestant", 4));
+var checkIfPangram = function (sentence) {
+    const newiii = new Set(sentence)
+    // for (i = 97; i <= 122; i++) {
+    //     if (!sentence.includes(String.fromCharCode(i))) {
+    //         return false
+    //     }
+    // }
+    return newiii
+
+};
+
+console.log(checkIfPangram("thequickbrownfoxjumpsoverthelazydogss"));
+console.log(String.fromCharCode(65));
