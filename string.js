@@ -63,5 +63,16 @@ var checkIfPangram = function (sentence) {
 
 };
 
-console.log(checkIfPangram("thequickbrownfoxjumpsoverthelazydogss"));
-console.log(String.fromCharCode(65));
+// console.log(checkIfPangram("thequickbrownfoxjumpsoverthelazydogss"));
+// console.log(String.fromCharCode(65));
+var reverseWords = function (s) {
+    let result = []
+    const words = s.split(" ");
+    for (let i = 0; i < words.length; i++) {
+        const element = words[i].split('').reverse();
+        result.push(element.join(''))
+
+    }
+    return result.join(" ")
+};
+console.log(reverseWords("Let's take LeetCode contest"));
