@@ -59,10 +59,21 @@ var plusOne = function (digits) {
 
   const newInt = BigInt(newStr) + BigInt(1);
   const toString = newInt.toString();
- 
+
   for (let i = 0; i < toString.length; i++) {
     result.push(toString[i]);
   }
   return result;
 };
-console.log(plusOne([6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3]));
+// console.log(plusOne([6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3]));
+var numberOfEmployeesWhoMetTarget = function (hours, target) {
+  let result = [];
+  for (let i = 0; i < hours.length; i++) {
+    if (hours[i] === target) {
+      result.push(hours[i]);
+    }
+
+  }
+  return result.length
+};
+console.log("new", numberOfEmployeesWhoMetTarget[0, 1, 2, 3, 4, 3], 3);
