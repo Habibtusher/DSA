@@ -41,5 +41,30 @@ const sortArray = (arr) => {
 }
 // console.log(sortArray(["Jan", "Feb", "Mar", "Apr"]));
 
-const number = [1,2,3,4,5]
-console.log(number.slice(-1,2));
+// const number = [1,2,3,4,5]
+// console.log(number.slice(-1,2));
+
+var minimumSum = function (num) {
+  const numtostr = num.toString()
+  for (var i = 1; i <= numtostr.length; i++) {
+    console.log(numtostr.slice(0, i), numtostr.slice(i));
+    // console.log(numtostr[i]);
+  }
+};
+// console.log(minimumSum(2932));
+let matches = 0;
+var numberOfMatches = function (n) {
+  let result = 0;
+  while (n > 1) {
+    if (n % 2 === 0) {
+      result = (result + (n / 2))
+      n = n / 2
+    }
+    else {
+      result = (result + ((n - 1) / 2))
+      n = (((n - 1) / 2) + 1)
+    }
+  }
+  return result
+};
+console.log(numberOfMatches(14))
