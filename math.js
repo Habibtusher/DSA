@@ -68,3 +68,15 @@ var numberOfMatches = function (n) {
   return result
 };
 console.log(numberOfMatches(14))
+var reverse = function (x) {
+  const result = parseInt(Math.abs(x).toString().split('').reverse().join(''))
+  if (result < Math.pow(2, 31) - 1) {
+      if (x < 0) {
+          return -Math.abs(result)
+      }
+      return Math.abs(result)
+  }
+  else {
+      return 0
+  }
+};
