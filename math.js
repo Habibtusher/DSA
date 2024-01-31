@@ -71,12 +71,26 @@ console.log(numberOfMatches(14))
 var reverse = function (x) {
   const result = parseInt(Math.abs(x).toString().split('').reverse().join(''))
   if (result < Math.pow(2, 31) - 1) {
-      if (x < 0) {
-          return -Math.abs(result)
-      }
-      return Math.abs(result)
+    if (x < 0) {
+      return -Math.abs(result)
+    }
+    return Math.abs(result)
   }
   else {
-      return 0
+    return 0
   }
+};
+var numberOfSteps = function (num) {
+  let result = 0
+  while (num > 0) {
+    if (num % 2 === 0) {
+      num = num / 2
+      result += 1
+    }
+    else{
+      num = num -1
+      result += 1
+    }
+  }
+  return result
 };
