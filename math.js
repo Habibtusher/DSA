@@ -67,7 +67,7 @@ var numberOfMatches = function (n) {
   }
   return result
 };
-console.log(numberOfMatches(14))
+// console.log(numberOfMatches(14))
 var reverse = function (x) {
   const result = parseInt(Math.abs(x).toString().split('').reverse().join(''))
   if (result < Math.pow(2, 31) - 1) {
@@ -87,10 +87,22 @@ var numberOfSteps = function (num) {
       num = num / 2
       result += 1
     }
-    else{
-      num = num -1
+    else {
+      num = num - 1
       result += 1
     }
   }
   return result
 };
+var countDigits = function (num) {
+  let result = 0
+  const numToString = num.toString()
+  for (let i = 0; i < numToString.length; i++) {
+    if (num % parseInt(numToString[i]) === 0) {
+      result += 1
+    }
+
+  }
+  return result
+};
+countDigits(121)
