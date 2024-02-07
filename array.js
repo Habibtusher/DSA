@@ -77,3 +77,17 @@ var numberOfEmployeesWhoMetTarget = function (hours, target) {
   return result.length
 };
 console.log("new", numberOfEmployeesWhoMetTarget[0, 1, 2, 3, 4, 3], 3);
+var maxProduct = function (nums) {
+  let result = 0;
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 1; j < nums.length; j++) {
+      if (i !== j) {
+        const multi = (nums[i] - 1) * (nums[j] - 1);
+        if (result < multi) {
+          result = multi;
+        }
+      }
+    }
+  }
+  return result;
+};
