@@ -82,10 +82,8 @@ var isAcronym = function (words, s) {
     if (words.length !== s.length) return false
     for (let i = 0; i < words.length; i++) {
         result.push(words[i][0].toLowerCase())
-
     }
     return result === s
-
 };
 // console.log(isAcronym(["never", "gonna", "give", "up", "on", "you"], "ngguoy"), "hello world");
 var restoreString = function (s, indices) {
