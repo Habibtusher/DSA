@@ -96,4 +96,18 @@ var restoreString = function (s, indices) {
     }
     returnresult.join("")
 };
-console.log(restoreString("codeleet", [4, 5, 6, 7, 0, 2, 1, 3]));
+// console.log(restoreString("codeleet", [4, 5, 6, 7, 0, 2, 1, 3]));
+
+var sortPeople = function (names, heights) {
+    const n = names.length;
+    
+    const people = [];
+    for (let i = 0; i < n; i++) {
+        people.push({ name: names[i], height: heights[i] });
+    }
+    people.sort((a, b) => b.height - a.height);
+    const sortedNames = people.map(person => person.name);
+    
+    return sortedNames;
+};
+console.log(sortPeople(["Mary","John","Emma"],[180,165,170]))
