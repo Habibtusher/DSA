@@ -97,18 +97,18 @@ var restoreString = function (s, indices) {
 // console.log(restoreString("codeleet", [4, 5, 6, 7, 0, 2, 1, 3]));
 
 var sortPeople = function (names, heights) {
-    const n = names.length;
-    
-    const people = [];
-    for (let i = 0; i < n; i++) {
-        people.push({ name: names[i], height: heights[i] });
-    }
-    people.sort((a, b) => b.height - a.height);
-    const sortedNames = people.map(person => person.name);
-    
-    return sortedNames;
+  const n = names.length;
+
+  const people = [];
+  for (let i = 0; i < n; i++) {
+    people.push({ name: names[i], height: heights[i] });
+  }
+  people.sort((a, b) => b.height - a.height);
+  const sortedNames = people.map(person => person.name);
+
+  return sortedNames;
 };
-console.log(sortPeople(["Mary","John","Emma"],[180,165,170]))
+console.log(sortPeople(["Mary", "John", "Emma"], [180, 165, 170]))
 const sort = (words) => {
   return [...words].sort((a, b) => a.localeCompare(b)).join("");
 };
@@ -138,7 +138,29 @@ var maximumNumberOfStringPairs = function (words) {
 // console.log(b);
 
 
-const ggg = (arr)=>{
-  return arr.sort((a,b)=> b.height - a.height)
+const ggg = (arr) => {
+  return arr.sort((a, b) => b.height - a.height)
 }
-console.log(ggg([{name:"Mary",height:180},{name:"John",height:165},{name:"Emma",height:170}]))
+// console.log(ggg([{name:"Mary",height:180},{name:"John",height:165},{name:"Emma",height:170}]))
+// program to check if the string is palindrome or not
+
+function checkPalindrome(string) {
+  const len = string.length;
+  for (let i = 0; i < len / 2; i++) {
+    console.log(string[i],string[len - 1 - i])
+    if (string[i] !== string[len - 1 - i]) {
+      return false
+    }
+  }
+  return true;
+}
+var firstPalindrome = function (words) {
+  for (let i = 0; i < words.length; i++) {
+    const res = checkPalindrome('racecar')
+    if (res === true) {
+      return words[i];
+    }
+  }
+};
+
+console.log(firstPalindrome(["abc", "car", "ada", "racecar", "cool"]))
