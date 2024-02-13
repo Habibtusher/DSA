@@ -108,7 +108,7 @@ var sortPeople = function (names, heights) {
     
     return sortedNames;
 };
-// console.log(sortPeople(["Mary","John","Emma"],[180,165,170]))
+console.log(sortPeople(["Mary","John","Emma"],[180,165,170]))
 const sort = (words) => {
   return [...words].sort((a, b) => a.localeCompare(b)).join("");
 };
@@ -136,3 +136,9 @@ var maximumNumberOfStringPairs = function (words) {
 // })();
 
 // console.log(b);
+
+
+const ggg = (arr)=>{
+  return arr.sort((a,b)=> b.height - a.height)
+}
+console.log(ggg([{name:"Mary",height:180},{name:"John",height:165},{name:"Emma",height:170}]))
