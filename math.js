@@ -105,4 +105,21 @@ var countDigits = function (num) {
   }
   return result
 };
-countDigits(121)
+// countDigits(121)
+var majorityElement = function (nums) {
+  let element = nums[0]
+  let elementCount = 1
+  for (let i = 1; i < nums.length; i++) {
+    if (element === nums[i]) {
+      elementCount++;
+    }
+    else {
+      elementCount--
+    }
+    if (elementCount < 0) {
+      element = nums[i];
+      elementCount++;
+    }
+  }
+  return element
+};
