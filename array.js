@@ -91,3 +91,25 @@ var maxProduct = function (nums) {
   }
   return result;
 };
+
+
+var ejnxjkclkjc = '"ejnxjkclkjc"';
+ejnxjkclkjc = ejnxjkclkjc.replace(/"/g, '');
+console.log(ejnxjkclkjc);
+
+var sumOddLengthSubarrays = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i; j < arr.length; j++) {
+      const subarray = arr.slice(i, j + 1);
+      if (subarray.length % 2 !== 0) {
+        sum += subarray.reduce((acc, nee) => acc + nee, 0);
+        console.log(sum, subarray)
+      }
+
+    }
+
+  }
+  return sum;
+};
+console.log(sumOddLengthSubarrays([1, 4, 2, 5, 3]))

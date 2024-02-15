@@ -123,3 +123,17 @@ var majorityElement = function (nums) {
   }
   return element
 };
+
+var sumOddLengthSubarrays = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+      for (let j = i; j < arr.length; j++) {
+          let subarray = arr.slice(i, j + 1);
+          if (subarray.length % 2 !== 0) {
+              sum += subarray.reduce((acc, curr) => acc + curr, 0);
+          }
+      }
+  }
+  return sum;
+};
+sumOddLengthSubarrays([1, 4, 2, 5, 3])
