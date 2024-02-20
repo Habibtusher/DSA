@@ -127,13 +127,38 @@ var majorityElement = function (nums) {
 var sumOddLengthSubarrays = function (arr) {
   let sum = 0;
   for (let i = 0; i < arr.length; i++) {
-      for (let j = i; j < arr.length; j++) {
-          let subarray = arr.slice(i, j + 1);
-          if (subarray.length % 2 !== 0) {
-              sum += subarray.reduce((acc, curr) => acc + curr, 0);
-          }
+    for (let j = i; j < arr.length; j++) {
+      let subarray = arr.slice(i, j + 1);
+      if (subarray.length % 2 !== 0) {
+        sum += subarray.reduce((acc, curr) => acc + curr, 0);
       }
+    }
   }
   return sum;
 };
-sumOddLengthSubarrays([1, 4, 2, 5, 3])
+// sumOddLengthSubarrays([1, 4, 2, 5, 3])
+
+
+var missingNumber = function (nums) {
+  let sum = 0;
+  let sumArr = nums.reduce((a, i) => a + i, 0);
+  for (let i = 0; i <= nums.length; i++) {
+    sum += i
+
+  }
+  return sum - sumArr
+};
+// var missingNumber = function (nums) {
+//   const sorted = nums.sort((a, b) => a - b);
+//   console.log(sorted.length)
+//   for (let i = 0; i <= sorted.length; i++) {
+//     if (sorted[i] !== i) {
+//       return i
+//     }
+//     else if(i === sorted.length) {
+
+//      return i
+//     }
+//   }
+// };
+console.log(missingNumber([0, 1]))
