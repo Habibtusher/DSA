@@ -161,4 +161,28 @@ var missingNumber = function (nums) {
 //     }
 //   }
 // };
-console.log(missingNumber([0, 1]))
+// console.log(missingNumber([0, 1]))
+// var minimumSum = function(num) {
+//   const newNum = num.toString().split('')
+//     for (let i = 0; i < newNum.length; i++) {
+//       for (let j = 0; j < newNum.length; j++) {
+//         if(i !== j) {
+
+//         }
+
+//       }
+
+//     }
+// };
+// console.log(minimumSum(2932))
+var isSameAfterReversals = function (num) {
+  const numTOstring = num.toString().split('').reverse();
+  const reversed1 = Math.abs(numTOstring.join(''));
+  const reversed2 = reversed1.toString().split('').reverse().join('');
+  if (Math.abs(reversed2) === num) {
+    return true
+  }
+  return false
+
+};
+console.log((isSameAfterReversals(526)))
