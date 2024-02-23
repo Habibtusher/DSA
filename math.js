@@ -175,14 +175,29 @@ var missingNumber = function (nums) {
 //     }
 // };
 // console.log(minimumSum(2932))
-var isSameAfterReversals = function (num) {
-  const numTOstring = num.toString().split('').reverse();
-  const reversed1 = Math.abs(numTOstring.join(''));
-  const reversed2 = reversed1.toString().split('').reverse().join('');
-  if (Math.abs(reversed2) === num) {
-    return true
-  }
-  return false
+// var isSameAfterReversals = function (num) {
+//   const numTOstring = num.toString().split('').reverse();
+//   const reversed1 = Math.abs(numTOstring.join(''));
+//   const reversed2 = reversed1.toString().split('').reverse().join('');
+//   if (Math.abs(reversed2) === num) {
+//     return true
+//   }
+//   return false
 
+// };
+// console.log((isSameAfterReversals(526)))
+var pivotInteger = function (n) {
+  let y = 0;
+  for (let i = 1; i <= n; i++) {
+    let secondSum = 0
+    y += i
+    for (let j = i; j <= n; j++) {
+      secondSum += j
+    }
+    if (y === secondSum) {
+      return i
+    }
+  }
+  return -1
 };
-console.log((isSameAfterReversals(526)))
+console.log(pivotInteger(8))
