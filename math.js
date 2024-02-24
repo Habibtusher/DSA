@@ -200,4 +200,41 @@ var pivotInteger = function (n) {
   }
   return -1
 };
-console.log(pivotInteger(8))
+// console.log(pivotInteger(8))
+var mergeAlternately = function (word1, word2) {
+  const newLength = word1.length + word2.length
+  const length = Math.max(word1.length, word2.length)
+  let result = ''
+  // for (let i = 0; i < newLength; i++) {
+  //   if (i % 2 === 0) {
+  //     if (word1.length) {
+  //       result += word1[0]
+  //       word1 = word1.substr(1)
+  //     }
+  //     else {
+  //       result += word2[0]
+  //       word2 = word2.substr(1)
+  //     }
+  //   }
+  //   else if (i % 2 !== 0) {
+  //     if (word2.length) {
+  //       result += word2[0]
+  //       word2 = word2.substr(1)
+  //     }
+  //     else {
+  //       result += word1[0]
+  //       word1 = word1.substr(1)
+  //     }
+  //   }
+  // }
+  for (let i = 0; i < length; i++) {
+    if (word1[i]) {
+      result += word1[i]
+    }
+    if (word2[i]) {
+      result += word2[i]
+    }
+  }
+  return result
+};
+console.log(mergeAlternately("abc", "pqri"))
