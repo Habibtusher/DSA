@@ -108,7 +108,7 @@ var sortPeople = function (names, heights) {
 
   return sortedNames;
 };
-console.log(sortPeople(["Mary", "John", "Emma"], [180, 165, 170]))
+// console.log(sortPeople(["Mary", "John", "Emma"], [180, 165, 170]))
 const sort = (words) => {
   return [...words].sort((a, b) => a.localeCompare(b)).join("");
 };
@@ -147,7 +147,7 @@ const ggg = (arr) => {
 function checkPalindrome(string) {
   const len = string.length;
   for (let i = 0; i < len / 2; i++) {
-    console.log(string[i],string[len - 1 - i])
+    console.log(string[i], string[len - 1 - i])
     if (string[i] !== string[len - 1 - i]) {
       return false
     }
@@ -163,4 +163,14 @@ var firstPalindrome = function (words) {
   }
 };
 
-console.log(firstPalindrome(["abc", "car", "ada", "racecar", "cool"]))
+// console.log(firstPalindrome(["abc", "car", "ada", "racecar", "cool"]))
+var numOfStrings = function (patterns, word) {
+  let result = 0
+  for (let i = 0; i < patterns.length; i++) {
+    if (word.includes(patterns[i])) {
+      result += 1
+    }
+  }
+  return result
+};
+console.log(numOfStrings(["a", "abc", "bc", "d"], "abc"))
