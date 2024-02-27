@@ -237,4 +237,17 @@ var mergeAlternately = function (word1, word2) {
   }
   return result
 };
-console.log(mergeAlternately("abc", "pqri"))
+// console.log(mergeAlternately("abc", "pqri"))
+var singleNumber = function (nums) {
+  let res = 0
+  const sorted = nums.sort((a, b) => a - b);
+
+  for (var i = 0; i < sorted.length; i++) {
+    if (sorted[i] !== sorted[i + 1] && sorted[i] !== sorted[i - 1]) {
+      res = sorted[i]
+    }
+  }
+
+  return res
+};
+console.log(singleNumber([1,4,2,2,4,4]))
